@@ -1,0 +1,129 @@
+/* ================================= */
+/*         Custom Properties        */
+/* ================================ */
+
+:root {
+  --color-blue: hsl(200, 50%, 50%);
+  --color-blue--hover: hsl(200, 50%, 60%);
+}
+
+/* ==================== */
+/*         Reset        */
+/* ==================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+figure,
+picture {
+  margin: 0;
+}
+
+body {
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+/* ==================== */
+/*         Main         */
+/* ==================== */
+
+main {
+  margin: 0 auto;
+  max-width: 55rem;
+  margin-top: 5rem;
+}
+.card-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: repeat(auto-fill, minmax(300px, 23rem));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 23rem));
+  gap: 1rem;
+  align-items: flex-start;
+  justify-content: center;
+}
+.card {
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 0.25rem;
+  overflow: hidden;
+  background: white;
+}
+.card__header {
+  font-size: 1.5rem;
+  padding: 1rem;
+  padding-bottom: 0;
+  margin-bottom: 0.5rem;
+}
+.card__body {
+  font-size: 0.9rem;
+  padding: 0 1rem;
+}
+.card__footer {
+  margin-top: 1rem;
+  padding: 1rem;
+  padding-top: 0;
+}
+
+/* ====================== */
+/*     Header - img       */
+/* ====================== */
+
+.card__header.card-image {
+  padding: 0;
+  overflow: hidden;
+}
+.card__header.card-image > img {
+  display: block;
+  width: 100%;
+  max-height: 200px;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: center;
+  transition: 200ms transform ease-in-out;
+}
+.card:hover > .card__header.card-image > img {
+  transform: scale(1.025);
+}
+
+/* =================== */
+/*      Buttons        */
+/* =================== */
+
+.btn {
+  border: none;
+  border-radius: 0.25rem;
+  border-radius: 0.25em;
+  background-color: var(--color-blue);
+  color: white;
+  padding: 0.5em 0.75em;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.btn + .btn {
+  margin-left: 0.25rem;
+}
+.btn-secondary {
+  background-color: transparent;
+  color: var(--color-blue);
+  border: 1px solid var(--color-blue);
+}
+.btn-primary:focus,
+.btn-primary:hover {
+  background-color: var(--color-blue--hover);
+}
+.btn-secondary:focus,
+.btn-secondary:hover {
+  color: var(--color-blue--hover);
+  border: 1px solid var(--color-blue--hover);
+}
